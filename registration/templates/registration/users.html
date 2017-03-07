@@ -1,0 +1,25 @@
+{% if user_list %}
+<h2>List of Registered Users</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Birth Date</th>
+        <th>Registration Date</th>
+        <th>Group</th>
+        <th>Slot</th>
+    </tr>
+    {% for user in user_list %}
+    <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.birthdate }}</td>
+        <td>{{ user.reg_date }}</td>
+        <td>{{ user.group }}</td>
+        <td>{{ user.slot }}</td>
+    </tr>
+    {% endfor %}
+<table>
+    {% else %}
+    <h2>No users registered yet !</h2>
+{% endif %}
